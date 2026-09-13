@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowLeft, Sparkles } from 'lucide-react';
 import heroBgImg from '../../assets/images/hero-bg-fruits.webp';
+import realisticFruitImg from '../../assets/images/fruit-realistic-shapes.webp';
 
 export const HeroSection = () => {
   return (
@@ -41,6 +42,21 @@ export const HeroSection = () => {
             >
               <span>تعرف على ليمون</span>
             </Link>
+          </div>
+
+          {/* Dedicated mobile product visual so fruits shine vividly on phone screens */}
+          <div className="hero-mobile-visual">
+            <div className="hero-mobile-img-wrapper">
+              <img 
+                src={realisticFruitImg} 
+                alt="فواكه ليمون المجففة المقرمشة" 
+                className="hero-mobile-img" 
+              />
+              <div className="hero-mobile-tag">
+                <Sparkles size={14} />
+                <span>مقرمشة 100% بدون سكر أو مواد حافظة</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>

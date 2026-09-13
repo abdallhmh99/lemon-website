@@ -5,11 +5,11 @@ export const TopAnnouncementBar = () => {
   return (
     <div className="top-announcement-bar">
       <div className="container top-bar-flex">
-        <div className="top-bar-item">
+        <div className="top-bar-item top-bar-item-city">
           <MapPin size={15} />
           <span>ليمون | المشروع الأول في درعا للفواكه المجففة (طعام رواد الفضاء)</span>
         </div>
-        <div className="top-bar-item">
+        <div className="top-bar-item top-bar-item-shipping">
           <Truck size={15} />
           <span>خدمة توصيل وشحن لكافة المحافظات السورية</span>
         </div>

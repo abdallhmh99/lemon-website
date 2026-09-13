@@ -2,7 +2,7 @@ import React from 'react';
 import { ShoppingCart, AlertCircle } from 'lucide-react';
 import { useCart } from '../../context/CartContext';
 
-export const ProductCard = ({ product, onQuickView }) => {
+export const ProductCard = ({ product, onQuickView, className = '' }) => {
   const { addToCart } = useCart();
   const isAvailable = product.inStock !== false;
 
@@ -13,7 +13,7 @@ export const ProductCard = ({ product, onQuickView }) => {
   };
 
   return (
-    <div className={`p-card-modern ${!isAvailable ? 'out-of-stock-card' : ''}`}>
+    <div className={`p-card-modern ${!isAvailable ? 'out-of-stock-card' : ''} ${className}`}>
       <div className="p-card-image-box" onClick={() => onQuickView(product)} style={{ position: 'relative' }}>
         <img src={product.image} alt={product.nameAr} className="p-card-img" loading="lazy" />
         {!isAvailable && (

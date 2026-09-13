@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowLeft, Sparkles } from 'lucide-react';
 import heroBgImg from '../../assets/images/hero-bg-fruits.webp';
-import realisticFruitImg from '../../assets/images/fruit-realistic-shapes.webp';
+import mobileHeroImg from '../../assets/images/mobile-fruit-hero.webp';
 
 export const HeroSection = () => {
   return (
@@ -48,14 +48,11 @@ export const HeroSection = () => {
           <div className="hero-mobile-visual">
             <div className="hero-mobile-img-wrapper">
               <img 
-                src={realisticFruitImg} 
+                src={mobileHeroImg} 
                 alt="فواكه ليمون المجففة المقرمشة" 
                 className="hero-mobile-img" 
+                loading="eager"
               />
-              <div className="hero-mobile-tag">
-                <Sparkles size={14} />
-                <span>مقرمشة 100% بدون سكر أو مواد حافظة</span>
-              </div>
             </div>
           </div>
         </div>

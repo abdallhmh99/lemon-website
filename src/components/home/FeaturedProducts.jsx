@@ -33,6 +33,7 @@ export const FeaturedProducts = () => {
             <ProductCard
               key={product.id}
               product={product}
+              className={product.id === 'mandarin-crisps' ? 'hide-on-mobile-product' : ''}
               onQuickView={(p) => setSelectedProduct(p)}
             />
           ))}

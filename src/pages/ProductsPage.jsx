@@ -1,7 +1,7 @@
-﻿import React, { useState, useMemo, useEffect } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
-import { Search, X } from 'lucide-react';
-import { PRODUCTS_DATA } from '../data/productsData';
+import { Search, X, Sparkles, Truck } from 'lucide-react';
+import { PRODUCTS_DATA, CATEGORIES_DATA } from '../data/productsData';
 import { ProductCard } from '../components/products/ProductCard';
 import { QuickViewModal } from '../components/products/QuickViewModal';
 
@@ -51,9 +51,28 @@ export const ProductsPage = () => {
 
   return (
     <div className="container" style={{ padding: '40px 24px 80px 24px' }}>
-      <div style={{ textAlign: 'center', marginBottom: '32px' }}>
-        <h1 style={{ fontSize: '2.5rem', color: 'var(--color-green-dark)', marginBottom: '8px' }}>جميع منتجات ليمون</h1>
-        <p style={{ color: 'var(--color-text-muted)' }}>فواكه وأطعمة مجففة بالتبريد طبيعية 100% بدون سكر مضاف أو مواد حافظة</p>
+      <div style={{ textAlign: 'center', marginBottom: '28px' }}>
+        <span style={{
+          display: 'inline-flex',
+          alignItems: 'center',
+          gap: '6px',
+          background: 'var(--color-yellow-light)',
+          color: 'var(--color-green-dark)',
+          fontWeight: 800,
+          padding: '4px 14px',
+          borderRadius: '16px',
+          fontSize: '0.82rem',
+          marginBottom: '10px'
+        }}>
+          <Sparkles size={14} />
+          <span>منشأ سوري 🇸🇾 | طعام رواد الفضاء الصحي</span>
+        </span>
+        <h1 style={{ fontSize: '2.5rem', color: 'var(--color-green-dark)', marginBottom: '8px' }}>
+          منتجات ليمون للفواكه المجففة بالتبريد
+        </h1>
+        <p style={{ color: 'var(--color-text-muted)', fontSize: '0.98rem' }}>
+          سعر العلبة 350 ل.س • طبيعية 100% بدون سكر مضاف • خدمة شحن وتوصيل لكافة المحافظات
+        </p>
       </div>
 
       {/* Search Input */}
@@ -70,7 +89,7 @@ export const ProductsPage = () => {
           <Search size={20} style={{ color: 'var(--color-text-muted)', marginLeft: '8px' }} />
           <input
             type="text"
-            placeholder="ابحث عن فاكهة، منتج، أو نكهة..."
+            placeholder="ابحث عن فاكهة، نكهة، أو منتج..."
             value={searchTerm}
             onChange={handleSearchChange}
             style={{
@@ -94,50 +113,34 @@ export const ProductsPage = () => {
         </div>
       </div>
 
-      {/* Category Tabs */}
-      <div style={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap', gap: '10px', marginBottom: '30px' }}>
-        <button
-          onClick={() => setActiveCategory('all')}
-          className={`category-tab-btn ${activeCategory === 'all' ? 'active' : ''}`}
-          style={{
-            padding: '8px 20px',
-            borderRadius: '20px',
-            border: '1px solid var(--border-color)',
-            fontWeight: 700,
-            cursor: 'pointer',
-            background: activeCategory === 'all' ? 'var(--color-yellow)' : '#FFF'
-          }}
-        >
-          الكل ({PRODUCTS_DATA.length})
-        </button>
-        <button
-          onClick={() => setActiveCategory('fruits')}
-          className={`category-tab-btn ${activeCategory === 'fruits' ? 'active' : ''}`}
-          style={{
-            padding: '8px 20px',
-            borderRadius: '20px',
-            border: '1px solid var(--border-color)',
-            fontWeight: 700,
-            cursor: 'pointer',
-            background: activeCategory === 'fruits' ? 'var(--color-yellow)' : '#FFF'
-          }}
-        >
-          فواكه مجففة
-        </button>
-        <button
-          onClick={() => setActiveCategory('candy')}
-          className={`category-tab-btn ${activeCategory === 'candy' ? 'active' : ''}`}
-          style={{
-            padding: '8px 20px',
-            borderRadius: '20px',
-            border: '1px solid var(--border-color)',
-            fontWeight: 700,
-            cursor: 'pointer',
-            background: activeCategory === 'candy' ? 'var(--color-yellow)' : '#FFF'
-          }}
-        >
-          شوكولاتة وكاندي
-        </button>
+      {/* Category Tabs (فواكه، خضار، كاندي، ايس كريم، أصناف غريبة، عروض) */}
+      <div style={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap', gap: '8px', marginBottom: '32px' }}>
+        {CATEGORIES_DATA.map((cat) => {
+          const count = cat.id === 'all' 
+            ? PRODUCTS_DATA.length 
+            : PRODUCTS_DATA.filter(p => p.category === cat.id).length;
+          
+          return (
+            <button
+              key={cat.id}
+              onClick={() => setActiveCategory(cat.id)}
+              className={`category-tab-btn ${activeCategory === cat.id ? 'active' : ''}`}
+              style={{
+                padding: '8px 18px',
+                borderRadius: '20px',
+                border: '1px solid var(--border-color)',
+                fontWeight: 800,
+                fontSize: '0.88rem',
+                cursor: 'pointer',
+                transition: 'all 0.2s ease',
+                background: activeCategory === cat.id ? 'var(--color-yellow)' : '#FFF',
+                color: activeCategory === cat.id ? 'var(--color-text-dark)' : 'var(--color-text)'
+              }}
+            >
+              {cat.nameAr} {count > 0 && `(${count})`}
+            </button>
+          );
+        })}
       </div>
 
       {/* Product Grid */}
@@ -148,16 +151,20 @@ export const ProductsPage = () => {
           ))}
         </div>
       ) : (
-        <div style={{ textAlign: 'center', padding: '60px 20px', background: '#FFFDF5', borderRadius: '16px', border: '1px solid var(--border-color)' }}>
-          <div style={{ fontSize: '3rem', marginBottom: '12px' }}>🔍</div>
-          <h3 style={{ fontSize: '1.3rem', fontWeight: 800, marginBottom: '8px' }}>لم يتم العثور على نتائج</h3>
-          <p style={{ color: 'var(--color-text-muted)', marginBottom: '16px' }}>جرب البحث بكلمات أخرى أو تصفح كافة التصنيفات</p>
+        <div style={{ textAlign: 'center', padding: '60px 20px', background: '#FFFDF5', borderRadius: '20px', border: '1px solid var(--border-color)', maxWidth: '600px', margin: '0 auto' }}>
+          <div style={{ fontSize: '3rem', marginBottom: '12px' }}>✨</div>
+          <h3 style={{ fontSize: '1.3rem', fontWeight: 800, marginBottom: '8px' }}>
+            قريباً في هذا القسم!
+          </h3>
+          <p style={{ color: 'var(--color-text-muted)', marginBottom: '18px', lineHeight: 1.6 }}>
+            نعمل في متجر ليمون باستمرار على إضافة وتجفيف أصناف جديدة ومبتكرة بتقنية التجميد. تابعنا ليصلك كل جديد فور توفره!
+          </p>
           <button
             onClick={() => { setActiveCategory('all'); clearSearch(); }}
             className="btn-yellow-pill"
             style={{ display: 'inline-flex' }}
           >
-            عرض كافة المنتجات
+            عرض المنتجات المتوفرة حالياً
           </button>
         </div>
       )}

@@ -1,10 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Phone, Mail, MapPin, Instagram, Twitter, Video, Ghost } from 'lucide-react';
+import { Phone, Mail, MapPin, Instagram, Facebook, MessageCircle } from 'lucide-react';
 import logoImg from '../../assets/logo.png';
 
-const STORE_PHONE = import.meta.env.VITE_STORE_PHONE || '+966 50 123 4567 / 0953420082';
-const STORE_EMAIL = import.meta.env.VITE_STORE_EMAIL || 'lemon.official.sy@gmail.com';
+const STORE_PHONE = '0953420082';
+const STORE_PHONE_INTL = '+963 953 420 082';
+const STORE_EMAIL = 'lemon.official.sy@gmail.com';
+const STORE_FACEBOOK = 'https://www.facebook.com/share/1DrTtcCPub/';
+const STORE_INSTAGRAM = 'https://www.instagram.com/lemon.official.sy?igsh=MTNhZnM3eHR5a2xmeg==';
 
 export const Footer = () => {
   return (
@@ -13,21 +16,39 @@ export const Footer = () => {
         <div className="footer-grid-four">
           {/* Col 1: Brand */}
           <div className="footer-col-brand">
-            <img src={logoImg} alt="ليمون Lemon" style={{ height: '44px', width: 'fit-content' }} />
-            <span className="footer-tagline">طبيعية ، صحية ، لذيذة</span>
+            <img src={logoImg} alt="ليمون Lemon" style={{ height: '48px', width: 'fit-content' }} />
+            <span className="footer-tagline">المشروع الأول بدرعا للفواكه المجففة بالتبريد (طعام رواد الفضاء)</span>
             
             <div className="footer-social-icons">
-              <a href="https://instagram.com" target="_blank" rel="noreferrer" className="social-link-item" title="إنستغرام" aria-label="Instagram">
-                <Instagram size={16} />
+              <a 
+                href={STORE_INSTAGRAM} 
+                target="_blank" 
+                rel="noreferrer" 
+                className="social-link-item" 
+                title="إنستغرام ليمون" 
+                aria-label="Instagram"
+              >
+                <Instagram size={17} />
               </a>
-              <a href="https://twitter.com" target="_blank" rel="noreferrer" className="social-link-item" title="X / تويتر" aria-label="Twitter">
-                <Twitter size={16} />
+              <a 
+                href={STORE_FACEBOOK} 
+                target="_blank" 
+                rel="noreferrer" 
+                className="social-link-item" 
+                title="فيسبوك ليمون" 
+                aria-label="Facebook"
+              >
+                <Facebook size={17} />
               </a>
-              <a href="https://tiktok.com" target="_blank" rel="noreferrer" className="social-link-item" title="تيك توك" aria-label="TikTok">
-                <Video size={16} />
-              </a>
-              <a href="https://snapchat.com" target="_blank" rel="noreferrer" className="social-link-item" title="سناب شات" aria-label="Snapchat">
-                <Ghost size={16} />
+              <a 
+                href={`https://wa.me/963953420082`} 
+                target="_blank" 
+                rel="noreferrer" 
+                className="social-link-item" 
+                title="واتساب ليمون" 
+                aria-label="WhatsApp"
+              >
+                <MessageCircle size={17} />
               </a>
             </div>
           </div>
@@ -37,43 +58,44 @@ export const Footer = () => {
             <h4 className="footer-col-title">روابط سريعة</h4>
             <ul className="footer-links-group">
               <li><Link to="/" className="footer-link">الرئيسية</Link></li>
-              <li><Link to="/products" className="footer-link">المنتجات</Link></li>
-              <li><Link to="/about" className="footer-link">من نحن</Link></li>
+              <li><Link to="/products" className="footer-link">جميع المنتجات</Link></li>
+              <li><Link to="/about" className="footer-link">قصة ليمون والمشروع</Link></li>
             </ul>
           </div>
 
           {/* Col 3: Quality Guarantee */}
           <div>
-            <h4 className="footer-col-title">جودة وضمان</h4>
-            <ul className="footer-links-group" style={{ fontSize: '0.9rem', color: 'var(--color-text-muted)', lineHeight: 1.8 }}>
-              <li>✓ طبيعي 100% بدون سكر مضاف</li>
-              <li>✓ تقنية التجفيف بالتبريد المتطورة</li>
-              <li>✓ احتفاظ بـ 95% من الفيتامينات</li>
-              <li>✓ تغليف محكم يحفظ القرمشة</li>
+            <h4 className="footer-col-title">مواصفات وجودة ليمون</h4>
+            <ul className="footer-links-group" style={{ fontSize: '0.88rem', color: 'var(--color-text-muted)', lineHeight: 1.8 }}>
+              <li>✓ منشأ سوري 100% طبيعي بدون سكر</li>
+              <li>✓ خالي تماماً من المواد الحافظة والملونات</li>
+              <li>✓ يحتفظ بـ 95% من الفيتامينات الأصلية</li>
+              <li>✓ العلبة تعادل 400 - 500 غ فريش</li>
+              <li>✓ يؤكل مباشرة وبديل صحي للشيبس</li>
             </ul>
           </div>
 
           {/* Col 4: Contact */}
           <div>
-            <h4 className="footer-col-title">معلومات التواصل</h4>
+            <h4 className="footer-col-title">معلومات التواصل والطلب</h4>
             <div className="footer-contact-row">
               <Phone size={16} />
-              <span dir="ltr">{STORE_PHONE}</span>
+              <a href="tel:0953420082" style={{ color: 'inherit' }} dir="ltr">{STORE_PHONE_INTL}</a>
             </div>
             <div className="footer-contact-row">
               <Mail size={16} />
-              <span>{STORE_EMAIL}</span>
+              <a href={`mailto:${STORE_EMAIL}`} style={{ color: 'inherit' }}>{STORE_EMAIL}</a>
             </div>
             <div className="footer-contact-row">
               <MapPin size={16} />
-              <span>المملكة العربية السعودية / سوريا</span>
+              <span>سوريا - درعا | توصيل وشحن للمحافظات</span>
             </div>
           </div>
         </div>
 
         <div className="footer-bottom-copyright">
           <div className="footer-bottom-flex">
-            <p>جميع الحقوق محفوظة © ليمون 2026</p>
+            <p>جميع الحقوق محفوظة © ليمون للفواكه المجففة بالتبريد 2026</p>
 
             <div className="developer-credit">
               <span>تطوير وتصميم: </span>

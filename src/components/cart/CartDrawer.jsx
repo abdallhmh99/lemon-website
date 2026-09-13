@@ -31,10 +31,10 @@ export const CartDrawer = () => {
         {/* Free shipping progress */}
         <div className="free-shipping-progress">
           <div className="free-shipping-text">
-            شحن مجاني للطلبات فوق 199 ريال / ل.س!
+            متجر ليمون | خدمة شحن وتوصيل لكافة المحافظات 🚚
           </div>
           <div className="progress-bar-track">
-            <div className="progress-bar-fill" style={{ width: Math.min(100, (totalPrice / 199) * 100) + '%' }} />
+            <div className="progress-bar-fill" style={{ width: Math.min(100, (totalPrice / 1500) * 100) + '%' }} />
           </div>
         </div>
 
@@ -52,7 +52,7 @@ export const CartDrawer = () => {
                 <img src={item.image} alt={item.nameAr} style={{ width: '50px', height: '50px', objectFit: 'contain', background: '#FFF', borderRadius: '4px', padding: '2px' }} />
                 <div style={{ flex: 1 }}>
                   <h5 style={{ fontSize: '0.88rem', fontWeight: 800 }}>{item.nameAr}</h5>
-                  <span style={{ fontSize: '0.82rem', fontWeight: 900, color: 'var(--color-green-dark)' }}>{item.price * item.qty} ر.س</span>
+                  <span style={{ fontSize: '0.82rem', fontWeight: 900, color: 'var(--color-green-dark)' }}>{item.price * item.qty} ل.س</span>
                 </div>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '6px', background: '#FFF', border: '1px solid var(--border-color)', borderRadius: '20px', padding: '2px 8px' }}>
                   <button onClick={() => updateQuantity(item.id, -1)} style={{ fontWeight: 800, fontSize: '0.9rem' }}>-</button>
@@ -68,7 +68,7 @@ export const CartDrawer = () => {
         <div className="cart-footer">
           <div className="cart-summary-row">
             <span>الإجمالي:</span>
-            <span className="cart-total-price num-font">{totalPrice} ر.س</span>
+            <span className="cart-total-price num-font">{totalPrice} ل.س</span>
           </div>
 
           <button onClick={sendWhatsAppOrder} className="btn-whatsapp-order">

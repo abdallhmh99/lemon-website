@@ -1,12 +1,12 @@
 import React from 'react';
-import { ShieldCheck, Leaf, Sparkles, Truck } from 'lucide-react';
+import { Award, Leaf, Sparkles, Truck } from 'lucide-react';
 
 export const FeaturesBar = () => {
   const features = [
-    { title: 'جودة عالية', subtitle: 'معايير صارمة', icon: ShieldCheck },
-    { title: 'طبيعي 100%', subtitle: 'بدون مواد حافظة', icon: Leaf },
-    { title: 'غني بالعناصر الغذائية', subtitle: 'فيتامينات ومعادن طبيعية', icon: Sparkles },
-    { title: 'توصيل سريع', subtitle: 'لجميع مناطق المملكة والمحافظات', icon: Truck },
+    { title: 'المشروع الأول بدرعا', subtitle: 'طعام رواد الفضاء الصحي', icon: Award },
+    { title: 'طبيعي 100%', subtitle: 'بدون سكر أو مواد حافظة', icon: Leaf },
+    { title: '95% قيمة غذائية', subtitle: 'تحتفظ بكامل الفيتامينات', icon: Sparkles },
+    { title: 'شحن للمحافظات', subtitle: 'خدمة توصيل سريعة وموثوقة', icon: Truck },
   ];
 
   return (

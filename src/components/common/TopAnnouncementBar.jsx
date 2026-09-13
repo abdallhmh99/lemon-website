@@ -1,17 +1,17 @@
 import React from 'react';
-import { Truck, Leaf } from 'lucide-react';
+import { Truck, Sparkles, MapPin } from 'lucide-react';
 
 export const TopAnnouncementBar = () => {
   return (
     <div className="top-announcement-bar">
       <div className="container top-bar-flex">
         <div className="top-bar-item">
-          <Truck size={15} />
-          <span>شحن مجاني للطلبات فوق 199 ريال / ل.س</span>
+          <MapPin size={15} />
+          <span>ليمون | المشروع الأول في درعا للفواكه المجففة بالتبريد (طعام رواد الفضاء) 🍋</span>
         </div>
         <div className="top-bar-item">
-          <Leaf size={15} />
-          <span>منتجات طبيعية 100%</span>
+          <Truck size={15} />
+          <span>خدمة توصيل وشحن لكافة المحافظات السورية 🚚</span>
         </div>
       </div>
     </div>

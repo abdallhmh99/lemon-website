@@ -29,7 +29,7 @@ export const ProductCard = ({ product, onQuickView }) => {
 
         <div className="p-card-price">
           <span className="num-font">{product.price}</span>
-          <span style={{ fontSize: '0.85rem', fontWeight: 700, marginRight: '4px' }}>ر.س</span>
+          <span style={{ fontSize: '0.85rem', fontWeight: 700, marginRight: '4px' }}>ل.س</span>
         </div>
 
         <button className="p-card-btn-add" onClick={handleAdd}>

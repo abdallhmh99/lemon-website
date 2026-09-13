@@ -1,15 +1,18 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowLeft, Sparkles } from 'lucide-react';
-import heroBgImg from '../../assets/images/hero-bg-fruits.webp';
-import mobileHeroImg from '../../assets/images/mobile-fruit-hero.webp';
+import heroBgDesktop from '../../assets/images/hero-bg-fruits.webp';
+import heroBgMobile from '../../assets/images/hero-bg-mobile.webp';
 
 export const HeroSection = () => {
   return (
     <section 
       id="hero" 
       className="hero-section hero-with-bg"
-      style={{ backgroundImage: `url(${heroBgImg})` }}
+      style={{
+        '--hero-bg-desktop': `url(${heroBgDesktop})`,
+        '--hero-bg-mobile': `url(${heroBgMobile})`
+      }}
     >
       <div className="hero-bg-overlay"></div>
       <div className="container hero-container-rel">
@@ -42,18 +45,6 @@ export const HeroSection = () => {
             >
               <span>تعرف على ليمون</span>
             </Link>
-          </div>
-
-          {/* Dedicated mobile product visual so fruits shine vividly on phone screens */}
-          <div className="hero-mobile-visual">
-            <div className="hero-mobile-img-wrapper">
-              <img 
-                src={mobileHeroImg} 
-                alt="فواكه ليمون المجففة المقرمشة" 
-                className="hero-mobile-img" 
-                loading="eager"
-              />
-            </div>
           </div>
         </div>
       </div>

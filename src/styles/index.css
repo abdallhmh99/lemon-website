@@ -140,8 +140,21 @@ img {
 }
 
 .brand-logo-img {
-  height: 48px;
+  height: 68px;
   width: auto;
+  object-fit: contain;
+  display: block;
+  transition: transform 0.2s ease;
+}
+
+.brand-logo-img:hover {
+  transform: scale(1.02);
+}
+
+@media (max-width: 768px) {
+  .brand-logo-img {
+    height: 52px;
+  }
 }
 
 .nav-menu {

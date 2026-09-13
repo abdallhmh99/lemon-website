@@ -16,7 +16,7 @@ export const Footer = () => {
         <div className="footer-grid-four">
           {/* Col 1: Brand */}
           <div className="footer-col-brand">
-            <img src={logoImg} alt="ليمون Lemon" style={{ height: '48px', width: 'fit-content' }} />
+            <img src={logoImg} alt="ليمون Lemon" style={{ height: '64px', width: 'fit-content' }} />
             <span className="footer-tagline">المشروع الأول بدرعا للفواكه المجففة بالتبريد (طعام رواد الفضاء)</span>
             
             <div className="footer-social-icons">

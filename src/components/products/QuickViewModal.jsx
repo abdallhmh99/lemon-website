@@ -14,13 +14,13 @@ export const QuickViewModal = ({ product, onClose }) => {
 
   return (
     <div className="modal-backdrop" onClick={(e) => { if (e.target === e.currentTarget) onClose(); }}>
-      <div className="modal-card" style={{ maxWidth: '680px' }}>
-        <button className="modal-close-btn" onClick={onClose}>
+      <div className="modal-card">
+        <button className="modal-close-btn" onClick={onClose} title="إغلاق">
           <X size={20} />
         </button>
 
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1.25fr', gap: '24px', alignItems: 'center' }}>
-          <div style={{ background: '#FFFDF5', border: '1px solid var(--border-color)', borderRadius: 'var(--radius-md)', padding: '24px', textAlign: 'center', position: 'relative' }}>
+        <div className="modal-body-layout">
+          <div className="modal-img-box">
             <span style={{
               position: 'absolute',
               top: '12px',
@@ -30,18 +30,18 @@ export const QuickViewModal = ({ product, onClose }) => {
               fontSize: '0.75rem',
               fontWeight: 800,
               padding: '3px 10px',
-              borderRadius: '12px'
+              borderRadius: '12px',
+              zIndex: 2
             }}>
               {product.origin || 'منشأ سوري'}
             </span>
             <img 
               src={product.image} 
               alt={product.nameAr} 
-              style={{ maxHeight: '230px', margin: '0 auto', filter: 'drop-shadow(0 10px 20px rgba(108,84,96,0.15))' }} 
             />
           </div>
 
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', textAlign: 'right' }}>
+          <div className="modal-info-col">
             <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
               <span style={{ fontSize: '0.8rem', fontWeight: 800, color: 'var(--color-green-dark)', background: 'var(--color-green-soft)', padding: '2px 8px', borderRadius: '10px' }}>
                 {product.categoryAr}
@@ -84,7 +84,7 @@ export const QuickViewModal = ({ product, onClose }) => {
               </div>
             </div>
 
-            <button onClick={handleAdd} className="btn-yellow-pill" style={{ justifyContent: 'center', marginTop: '4px' }}>
+            <button onClick={handleAdd} className="btn-yellow-pill modal-add-btn">
               <ShoppingCart size={18} />
               <span>أضف إلى السلة ({product.price} ل.س)</span>
             </button>

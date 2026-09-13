@@ -21,7 +21,7 @@ import bowlImg from '../assets/images/bowl-fruits.webp';
 
 export const AboutPage = () => {
   return (
-    <div className="container" style={{ padding: '50px 24px 80px 24px' }}>
+    <div className="container about-page-container">
       {/* Hero Section */}
       <div style={{ textAlign: 'center', maxWidth: '850px', margin: '0 auto 50px auto' }}>
         <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', background: 'var(--color-yellow-light)', color: 'var(--color-green-dark)', fontWeight: 800, padding: '6px 18px', borderRadius: '20px', fontSize: '0.88rem', marginBottom: '14px' }}>
@@ -37,17 +37,7 @@ export const AboutPage = () => {
       </div>
 
       {/* Story & Image Row */}
-      <div style={{
-        display: 'grid',
-        gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
-        gap: '40px',
-        alignItems: 'center',
-        background: '#FFFDF5',
-        border: '1px solid var(--border-color)',
-        borderRadius: '24px',
-        padding: '36px',
-        marginBottom: '50px'
-      }}>
+      <div className="about-hero-card">
         <div>
           <span style={{ fontSize: '0.85rem', fontWeight: 800, color: 'var(--color-green-dark)', background: 'var(--color-green-soft)', padding: '3px 12px', borderRadius: '12px', display: 'inline-block', marginBottom: '10px' }}>
             رؤيتنا ورسالتنا
@@ -83,23 +73,12 @@ export const AboutPage = () => {
       </div>
 
       {/* Deep Specification & Storage Card */}
-      <div style={{
-        background: '#FFFFFF',
-        border: '1.5px solid var(--border-color)',
-        borderRadius: '24px',
-        padding: '36px',
-        marginBottom: '50px',
-        boxShadow: '0 4px 20px rgba(0,0,0,0.03)'
-      }}>
+      <div className="about-facts-card">
         <h3 style={{ fontSize: '1.4rem', fontWeight: 900, color: 'var(--color-green-dark)', marginBottom: '20px', textAlign: 'center' }}>
           حقائق علمية ومواصفات علبة ليمون
         </h3>
 
-        <div style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
-          gap: '24px'
-        }}>
+        <div className="about-specs-grid">
           <div style={{ background: '#FFFDF5', padding: '20px', borderRadius: '16px', border: '1px solid var(--border-color)' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '8px' }}>
               <Package size={22} style={{ color: 'var(--color-green-dark)' }} />
@@ -181,18 +160,7 @@ export const AboutPage = () => {
       </div>
 
       {/* Official Contact & Socials Bar */}
-      <div style={{
-        background: '#FFFDF5',
-        border: '1.5px solid var(--border-color)',
-        borderRadius: '20px',
-        padding: '28px',
-        marginBottom: '40px',
-        display: 'flex',
-        flexWrap: 'wrap',
-        alignItems: 'center',
-        justifyContent: 'space-between',
-        gap: '20px'
-      }}>
+      <div className="about-contact-bar">
         <div>
           <h3 style={{ fontSize: '1.25rem', fontWeight: 900, color: 'var(--color-green-dark)', marginBottom: '6px' }}>
             تواصل مع متجر ليمون مباشرة
@@ -239,19 +207,7 @@ export const AboutPage = () => {
       </div>
 
       {/* Technology Partner Section */}
-      <div style={{
-        background: '#FFFFFF',
-        border: '1px solid var(--border-color)',
-        borderRadius: '20px',
-        padding: '30px',
-        marginBottom: '40px',
-        display: 'flex',
-        flexWrap: 'wrap',
-        alignItems: 'center',
-        justifyContent: 'space-between',
-        gap: '24px',
-        boxShadow: 'var(--shadow-card)'
-      }}>
+      <div className="about-partner-card">
         <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
           <div style={{
             width: '52px',

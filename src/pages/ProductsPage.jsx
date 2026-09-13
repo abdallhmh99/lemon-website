@@ -53,21 +53,6 @@ export const ProductsPage = () => {
   return (
     <div className="container" style={{ padding: '40px 24px 80px 24px' }}>
       <div style={{ textAlign: 'center', marginBottom: '28px' }}>
-        <span style={{
-          display: 'inline-flex',
-          alignItems: 'center',
-          gap: '6px',
-          background: 'var(--color-yellow-light)',
-          color: 'var(--color-green-dark)',
-          fontWeight: 800,
-          padding: '4px 14px',
-          borderRadius: '16px',
-          fontSize: '0.82rem',
-          marginBottom: '10px'
-        }}>
-          <Sparkles size={14} />
-          <span>منشأ سوري | طعام رواد الفضاء الصحي</span>
-        </span>
         <h1 style={{ fontSize: '2.5rem', color: 'var(--color-green-dark)', marginBottom: '8px' }}>
           منتجات ليمون للفواكه المجففة
         </h1>

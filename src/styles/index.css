@@ -1339,6 +1339,102 @@ img {
   background: var(--bg-cream);
 }
 
+.modal-body-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.25fr;
+  gap: 24px;
+  align-items: center;
+}
+
+.modal-img-box {
+  background: #FFFDF5;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 24px;
+  text-align: center;
+  position: relative;
+}
+
+.modal-img-box img {
+  max-height: 230px;
+  max-width: 100%;
+  margin: 0 auto;
+  object-fit: contain;
+  filter: drop-shadow(0 10px 20px rgba(108, 84, 96, 0.15));
+}
+
+.modal-info-col {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  text-align: right;
+}
+
+.modal-add-btn {
+  justify-content: center;
+  margin-top: 4px;
+  width: 100%;
+}
+
+/* About Page Hero Card & Specs Grid */
+.about-hero-card {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 40px;
+  align-items: center;
+  background: #FFFDF5;
+  border: 1px solid var(--border-color);
+  border-radius: 24px;
+  padding: 36px;
+  margin-bottom: 50px;
+}
+
+.about-specs-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.about-page-container {
+  padding: 50px 24px 80px 24px;
+}
+
+.about-facts-card {
+  background: #FFFFFF;
+  border: 1.5px solid var(--border-color);
+  border-radius: 24px;
+  padding: 36px;
+  margin-bottom: 50px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+}
+
+.about-contact-bar {
+  background: #FFFDF5;
+  border: 1.5px solid var(--border-color);
+  border-radius: 20px;
+  padding: 28px;
+  margin-bottom: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.about-partner-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-radius: 20px;
+  padding: 30px;
+  margin-bottom: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  box-shadow: var(--shadow-card);
+}
+
 /* Responsive */
 @media (max-width: 1024px) {
   .products-five-grid {
@@ -1350,25 +1446,9 @@ img {
 }
 
 @media (max-width: 768px) {
-  /* Clean Top Announcement Bar */
+  /* Completely hide top announcement bar on mobile as requested */
   .top-announcement-bar {
-    padding: 7px 0;
-    font-size: 0.8rem;
-    background: #FFFBEB;
-  }
-  .top-bar-flex {
-    justify-content: center;
-    text-align: center;
-  }
-  .top-bar-item-city {
     display: none !important;
-  }
-  .top-bar-item-shipping {
-    width: 100%;
-    justify-content: center;
-    gap: 6px;
-    font-weight: 800;
-    color: var(--color-green-dark);
   }
 
   /* Nav Header */
@@ -1399,13 +1479,6 @@ img {
     align-items: center;
     text-align: center;
     gap: 16px;
-  }
-  .hero-badge-pill {
-    margin: 0 auto;
-    font-size: 0.8rem;
-    padding: 5px 14px;
-    background: rgba(255, 255, 255, 0.92);
-    backdrop-filter: blur(8px);
   }
   .hero-main-heading {
     font-size: 2.1rem;
@@ -1569,10 +1642,78 @@ img {
     grid-template-columns: 1fr !important;
     gap: 20px !important;
   }
+
+  /* Quick View Modal Mobile */
   .modal-card {
-    width: 94% !important;
-    padding: 18px 14px !important;
+    width: 92% !important;
+    max-width: 440px !important;
+    padding: 22px 16px !important;
+    border-radius: 20px !important;
     max-height: 90vh !important;
     overflow-y: auto !important;
   }
+  .modal-body-layout {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 16px !important;
+  }
+  .modal-img-box {
+    padding: 16px !important;
+    width: 100% !important;
+  }
+  .modal-img-box img {
+    max-height: 180px !important;
+  }
+  .modal-add-btn {
+    width: 100% !important;
+    padding: 14px 20px !important;
+    font-size: 0.95rem !important;
+    border-radius: 14px !important;
+  }
+
+  /* About Page Cards Mobile */
+  .about-page-container {
+    padding: 30px 14px 60px 14px !important;
+  }
+  .about-hero-card {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+    padding: 20px 16px !important;
+    margin-bottom: 24px !important;
+    border-radius: 18px !important;
+    width: 100% !important;
+  }
+  .about-facts-card {
+    padding: 20px 16px !important;
+    margin-bottom: 24px !important;
+    border-radius: 18px !important;
+  }
+  .about-specs-grid {
+    grid-template-columns: 1fr !important;
+    gap: 14px !important;
+  }
+  .about-contact-bar,
+  .about-partner-card {
+    padding: 20px 16px !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 16px !important;
+    margin-bottom: 24px !important;
+    border-radius: 18px !important;
+  }
+  .about-contact-bar > div:last-child,
+  .about-partner-card > div:last-child {
+    width: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 10px !important;
+  }
+  .about-contact-bar .btn-yellow-pill,
+  .about-contact-bar .btn-video-outline,
+  .about-partner-card .btn-yellow-pill,
+  .about-partner-card .btn-video-outline {
+    width: 100% !important;
+    justify-content: center !important;
+  }
 }
+

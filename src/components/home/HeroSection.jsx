@@ -17,11 +17,6 @@ export const HeroSection = () => {
       <div className="hero-bg-overlay"></div>
       <div className="container hero-container-rel">
         <div className="hero-content-wrapper">
-          <div className="hero-badge-pill">
-            <Sparkles size={16} />
-            <span>طعم الطبيعة.. في كل قطعة</span>
-          </div>
-          
           <h1 className="hero-main-heading">
             فواكه مجففة
             <br />

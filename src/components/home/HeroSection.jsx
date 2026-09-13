@@ -1,11 +1,9 @@
-﻿import React from 'react';
-import { ArrowLeft, Volume2, Sparkles } from 'lucide-react';
-import { useSound } from '../../context/SoundContext';
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { ArrowLeft, Sparkles } from 'lucide-react';
 import heroBgImg from '../../assets/images/hero-bg-fruits.webp';
 
 export const HeroSection = () => {
-  const { playCrunchSound } = useSound();
-
   return (
     <section 
       id="hero" 
@@ -36,15 +34,13 @@ export const HeroSection = () => {
               <ArrowLeft size={18} />
             </a>
 
-            <button
+            <Link
+              to="/about"
               className="btn-video-outline"
-              onClick={playCrunchSound}
-              title="استمع لصوت القرمشة الطبيعية"
-              type="button"
+              title="تعرف على قصة مشروع ليمون"
             >
-              <Volume2 size={18} style={{ color: 'var(--color-green-dark)' }} />
-              <span>صوت القرمشة!</span>
-            </button>
+              <span>تعرف على ليمون</span>
+            </Link>
           </div>
         </div>
       </div>

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowLeft, CheckCircle2, Award } from 'lucide-react';
+import { ArrowLeft, CheckCircle2, Award, ShoppingBag } from 'lucide-react';
 import realisticFruitImg from '../../assets/images/fruit-realistic-shapes.webp';
 
 export const AboutStorySection = () => {
@@ -42,16 +42,13 @@ export const AboutStorySection = () => {
               </div>
             </div>
 
-            <div style={{ marginTop: '16px', display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
+            <div className="about-story-actions">
               <Link to="/about" className="btn-yellow-pill" style={{ display: 'inline-flex' }}>
                 <span>اقرأ قصة ليمون بالتفصيل</span>
                 <ArrowLeft size={18} />
               </Link>
-              <Link 
-                to="/products" 
-                className="btn-video-outline" 
-                style={{ display: 'inline-flex', borderColor: 'rgba(255,255,255,0.7)', color: '#FFFFFF' }}
-              >
+              <Link to="/products" className="about-story-btn-secondary">
+                <ShoppingBag size={18} />
                 <span>تصفح المنتجات</span>
               </Link>
             </div>

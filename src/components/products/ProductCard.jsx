@@ -1,18 +1,15 @@
 import React from 'react';
 import { ShoppingCart, AlertCircle } from 'lucide-react';
 import { useCart } from '../../context/CartContext';
-import { useSound } from '../../context/SoundContext';
 
 export const ProductCard = ({ product, onQuickView }) => {
   const { addToCart } = useCart();
-  const { playCrunchSound } = useSound();
   const isAvailable = product.inStock !== false;
 
   const handleAdd = (e) => {
     e.stopPropagation();
     if (!isAvailable) return;
     addToCart(product);
-    playCrunchSound();
   };
 
   return (

@@ -1,17 +1,14 @@
 import React from 'react';
 import { X, ShoppingCart, Sparkles, AlertCircle, ShieldCheck, SunDim } from 'lucide-react';
 import { useCart } from '../../context/CartContext';
-import { useSound } from '../../context/SoundContext';
 
 export const QuickViewModal = ({ product, onClose }) => {
   const { addToCart } = useCart();
-  const { playCrunchSound } = useSound();
 
   if (!product) return null;
 
   const handleAdd = () => {
     addToCart(product);
-    playCrunchSound();
     onClose();
   };
 

@@ -1451,7 +1451,10 @@ img {
     display: none !important;
   }
 
-  /* Nav Header */
+  /* Nav Header - fix logo and menu btn too close to screen edges */
+  .nav-container {
+    padding: 10px 16px !important;
+  }
   .nav-menu {
     display: none;
   }
@@ -1509,23 +1512,31 @@ img {
 
   /* Features Bar in compact 2x2 grid */
   .features-bar-section {
-    padding: 0 0 35px 0;
+    padding: 0 0 16px 0;
   }
   .features-bar-card {
     grid-template-columns: repeat(2, 1fr) !important;
     gap: 10px !important;
-    padding: 14px 12px !important;
+    padding: 16px 14px !important;
     border-radius: 16px !important;
+    align-items: stretch !important;
   }
   .feature-bar-item {
-    gap: 8px;
+    gap: 10px;
     align-items: center;
+    justify-content: flex-start;
+    padding: 10px 8px;
+    background: var(--bg-cream);
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    min-height: 60px;
   }
   .feature-icon-wrapper {
     width: 34px;
     height: 34px;
     min-width: 34px;
     border-radius: 10px;
+    background: #FFFFFF;
   }
   .feature-icon-wrapper svg {
     width: 17px;
@@ -1541,6 +1552,9 @@ img {
   }
 
   /* Compact 2-Column Mobile Product Grid */
+  .featured-products-section {
+    padding: 20px 0 40px 0 !important;
+  }
   .products-five-grid {
     grid-template-columns: repeat(2, 1fr) !important;
     gap: 10px !important;

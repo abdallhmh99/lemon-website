@@ -180,7 +180,7 @@ export const AdminPage = () => {
           </div>
 
           <h2 style={{ fontSize: '1.5rem', fontWeight: 900, marginBottom: '8px' }}>
-            لوحة تحكم متجر ليمون 🍋
+            لوحة تحكم متجر ليمون
           </h2>
           <p style={{ fontSize: '0.88rem', color: 'var(--color-text-muted)', marginBottom: '24px' }}>
             يرجى إدخال رمز الأمان أو كلمة المرور للمتابعة
@@ -248,14 +248,14 @@ export const AdminPage = () => {
         <div>
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
             <h1 style={{ fontSize: '2rem', fontWeight: 900, color: 'var(--color-green-dark)' }}>
-              إدارة المنتجات والمخزون 🍋
+              إدارة المنتجات والمخزون
             </h1>
             <span style={{ background: 'var(--color-green-soft)', color: 'var(--color-green-dark)', padding: '2px 10px', borderRadius: '10px', fontSize: '0.8rem', fontWeight: 800 }}>
               لوحة الإدارة
             </span>
           </div>
           <p style={{ color: 'var(--color-text-muted)', fontSize: '0.9rem', marginTop: '4px' }}>
-            التحكم الكامل بأسعار وتوفر وأصناف فواكه ليمون المجففة بالتبريد
+            التحكم الكامل بأسعار وتوفر وأصناف فواكه ليمون المجففة
           </p>
         </div>
 

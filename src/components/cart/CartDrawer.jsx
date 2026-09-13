@@ -31,7 +31,7 @@ export const CartDrawer = () => {
         {/* Free shipping progress */}
         <div className="free-shipping-progress">
           <div className="free-shipping-text">
-            متجر ليمون | خدمة شحن وتوصيل لكافة المحافظات 🚚
+            متجر ليمون | خدمة شحن وتوصيل لكافة المحافظات
           </div>
           <div className="progress-bar-track">
             <div className="progress-bar-fill" style={{ width: Math.min(100, (totalPrice / 1500) * 100) + '%' }} />
@@ -42,7 +42,9 @@ export const CartDrawer = () => {
         <div className="cart-items-list">
           {cart.length === 0 ? (
             <div style={{ textAlign: 'center', padding: '50px 20px' }}>
-              <div style={{ fontSize: '2.8rem', marginBottom: '12px' }}>🛍️</div>
+              <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '12px', color: 'var(--color-green-dark)' }}>
+                <ShoppingBag size={42} />
+              </div>
               <h4 style={{ fontSize: '1.1rem', fontWeight: 800, marginBottom: '6px' }}>سلتك فارغة</h4>
               <p style={{ fontSize: '0.85rem', color: 'var(--color-text-muted)' }}>أضف فواكه رواد الفضاء المقرمشة لتجربة طعم فريد!</p>
             </div>

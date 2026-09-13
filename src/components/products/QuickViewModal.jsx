@@ -35,7 +35,7 @@ export const QuickViewModal = ({ product, onClose }) => {
               padding: '3px 10px',
               borderRadius: '12px'
             }}>
-              {product.origin || 'منشأ سوري 🇸🇾'}
+              {product.origin || 'منشأ سوري'}
             </span>
             <img 
               src={product.image} 

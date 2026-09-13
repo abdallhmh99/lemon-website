@@ -63,11 +63,11 @@ export const CartProvider = ({ children }) => {
 
   const sendWhatsAppOrder = () => {
     if (cart.length === 0) return;
-    let msg = `مرحباً متجر ليمون للفواكه المجففة بالتبريد 🍋\nأود تأكيد طلب من المتجر مع خدمة التوصيل:\n\n`;
+    let msg = `مرحباً متجر ليمون للفواكه المجففة\nأود تأكيد طلب من المتجر مع خدمة التوصيل:\n\n`;
     cart.forEach((i, idx) => {
       msg += `${idx + 1}. ${i.nameAr} × ${i.qty} = ${i.price * i.qty} ل.س\n`;
     });
-    msg += `\n⭐ الإجمالي: ${totalPrice} ل.س\nيرجى تزويدي بتفاصيل الشحن والتوصيل للمحافظة. شكراً لكم!`;
+    msg += `\nالإجمالي: ${totalPrice} ل.س\nيرجى تزويدي بتفاصيل الشحن والتوصيل للمحافظة. شكراً لكم!`;
     const cleanNumber = String(WHATSAPP_NUMBER).replace(/[^0-9]/g, '');
     window.open(`https://wa.me/${cleanNumber}?text=${encodeURIComponent(msg)}`, '_blank');
   };

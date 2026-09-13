@@ -66,10 +66,10 @@ export const ProductsPage = () => {
           marginBottom: '10px'
         }}>
           <Sparkles size={14} />
-          <span>منشأ سوري 🇸🇾 | طعام رواد الفضاء الصحي</span>
+          <span>منشأ سوري | طعام رواد الفضاء الصحي</span>
         </span>
         <h1 style={{ fontSize: '2.5rem', color: 'var(--color-green-dark)', marginBottom: '8px' }}>
-          منتجات ليمون للفواكه المجففة بالتبريد
+          منتجات ليمون للفواكه المجففة
         </h1>
         <p style={{ color: 'var(--color-text-muted)', fontSize: '0.98rem' }}>
           سعر العلبة 350 ل.س • طبيعية 100% بدون سكر مضاف • خدمة شحن وتوصيل لكافة المحافظات
@@ -153,9 +153,11 @@ export const ProductsPage = () => {
         </div>
       ) : (
         <div style={{ textAlign: 'center', padding: '60px 20px', background: '#FFFDF5', borderRadius: '20px', border: '1px solid var(--border-color)', maxWidth: '600px', margin: '0 auto' }}>
-          <div style={{ fontSize: '3rem', marginBottom: '12px' }}>✨</div>
+          <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '14px', color: 'var(--color-green-dark)' }}>
+            <Sparkles size={40} />
+          </div>
           <h3 style={{ fontSize: '1.3rem', fontWeight: 800, marginBottom: '8px' }}>
-            قريباً في هذا القسم!
+            قريباً في هذا القسم
           </h3>
           <p style={{ color: 'var(--color-text-muted)', marginBottom: '18px', lineHeight: 1.6 }}>
             نعمل في متجر ليمون باستمرار على إضافة وتجفيف أصناف جديدة ومبتكرة بتقنية التجميد. تابعنا ليصلك كل جديد فور توفره!

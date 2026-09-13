@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Sparkles, ArrowLeft, CheckCircle2, Award, HeartHandshake, ShieldCheck } from 'lucide-react';
+import { ArrowLeft, CheckCircle2, Award } from 'lucide-react';
 import realisticFruitImg from '../../assets/images/fruit-realistic-shapes.webp';
 
 export const AboutStorySection = () => {
@@ -12,7 +12,7 @@ export const AboutStorySection = () => {
           <div className="about-story-text-col">
             <div className="about-story-badge">
               <Award size={16} />
-              <span>المشروع الأول في درعا 🍋</span>
+              <span>المشروع الأول في درعا</span>
             </div>
 
             <h2 className="about-story-heading">
@@ -47,7 +47,11 @@ export const AboutStorySection = () => {
                 <span>اقرأ قصة ليمون بالتفصيل</span>
                 <ArrowLeft size={18} />
               </Link>
-              <Link to="/products" className="btn-video-outline" style={{ display: 'inline-flex' }}>
+              <Link 
+                to="/products" 
+                className="btn-video-outline" 
+                style={{ display: 'inline-flex', borderColor: 'rgba(255,255,255,0.7)', color: '#FFFFFF' }}
+              >
                 <span>تصفح المنتجات</span>
               </Link>
             </div>

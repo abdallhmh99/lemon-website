@@ -26,7 +26,7 @@ export const AboutPage = () => {
       <div style={{ textAlign: 'center', maxWidth: '850px', margin: '0 auto 50px auto' }}>
         <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', background: 'var(--color-yellow-light)', color: 'var(--color-green-dark)', fontWeight: 800, padding: '6px 18px', borderRadius: '20px', fontSize: '0.88rem', marginBottom: '14px' }}>
           <Award size={16} />
-          <span>المشروع الأول في درعا للفواكه المجففة بالتبريد 🍋</span>
+          <span>المشروع الأول في درعا للفواكه المجففة</span>
         </div>
         <h1 style={{ fontSize: '2.6rem', fontWeight: 900, color: 'var(--color-green-dark)', marginBottom: '16px' }}>
           قصة ليمون.. فكرة فضائية تنطلق من حوران
@@ -85,7 +85,7 @@ export const AboutPage = () => {
         boxShadow: '0 4px 20px rgba(0,0,0,0.03)'
       }}>
         <h3 style={{ fontSize: '1.4rem', fontWeight: 900, color: 'var(--color-green-dark)', marginBottom: '20px', textAlign: 'center' }}>
-          حقائق علمية ومواصفات علبة ليمون 🍋
+          حقائق علمية ومواصفات علبة ليمون
         </h3>
 
         <div style={{
@@ -188,7 +188,7 @@ export const AboutPage = () => {
       }}>
         <div>
           <h3 style={{ fontSize: '1.25rem', fontWeight: 900, color: 'var(--color-green-dark)', marginBottom: '6px' }}>
-            تواصل مع متجر ليمون مباشرة 🍋
+            تواصل مع متجر ليمون مباشرة
           </h3>
           <p style={{ fontSize: '0.9rem', color: 'var(--color-text-muted)' }}>
             للطلبات، الاستفسارات، وطلبات الجملة والشحن للمحافظات:

@@ -3,7 +3,7 @@ import { PRODUCTS_DATA as INITIAL_PRODUCTS_DATA, CATEGORIES_DATA } from '../data
 
 const ProductsContext = createContext(null);
 
-const STORAGE_KEY = 'lemon_store_products_v1';
+const STORAGE_KEY = 'lemon_store_products_v2';
 
 export const ProductsProvider = ({ children }) => {
   const [products, setProducts] = useState(() => {

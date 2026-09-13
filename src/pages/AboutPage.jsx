@@ -286,16 +286,15 @@ export const AboutPage = () => {
             href="https://wa.me/963935073214"
             target="_blank"
             rel="noreferrer"
-            className="btn-video-outline"
+            className="btn-yellow-pill"
             style={{
-              padding: '9px 18px',
+              padding: '10px 20px',
               fontSize: '0.88rem',
               display: 'inline-flex',
-              gap: '8px',
-              borderRadius: 'var(--radius-full)'
+              gap: '8px'
             }}
           >
-            <Phone size={15} style={{ color: 'var(--color-green-dark)' }} />
+            <Phone size={15} />
             <span dir="ltr">+963 935 073 214</span>
           </a>
 
@@ -303,15 +302,16 @@ export const AboutPage = () => {
             href="https://www.instagram.com/am_digital.sy?stkn=MWl2cG1uenl0bDcwaQ=="
             target="_blank"
             rel="noreferrer"
-            className="btn-yellow-pill"
+            className="btn-video-outline"
             style={{
-              padding: '9px 18px',
+              padding: '10px 18px',
               fontSize: '0.88rem',
               display: 'inline-flex',
-              gap: '8px'
+              gap: '8px',
+              borderRadius: 'var(--radius-full)'
             }}
           >
-            <Instagram size={15} />
+            <Instagram size={15} style={{ color: '#E1306C' }} />
             <span>حساب الإنستغرام</span>
           </a>
         </div>

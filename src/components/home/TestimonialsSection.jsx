@@ -1,6 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { ArrowLeft } from 'lucide-react';
 import { TESTIMONIALS_DATA } from '../../data/productsData';
 
 export const TestimonialsSection = () => {
@@ -14,11 +12,6 @@ export const TestimonialsSection = () => {
               <span>ثقة عملائنا هي مصدر إلهامنا</span>
             </h2>
           </div>
-
-          <Link to="/about" className="view-all-link">
-            <span>جميع التقييمات</span>
-            <ArrowLeft size={16} />
-          </Link>
         </div>
 
         <div className="reviews-three-grid">

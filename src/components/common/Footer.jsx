@@ -95,7 +95,12 @@ export const Footer = () => {
 
         <div className="footer-bottom-copyright">
           <div className="footer-bottom-flex">
-            <p>جميع الحقوق محفوظة © ليمون للفواكه المجففة بالتبريد 2026</p>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '16px', flexWrap: 'wrap' }}>
+              <p>جميع الحقوق محفوظة © ليمون للفواكه المجففة بالتبريد 2026</p>
+              <Link to="/admin" style={{ fontSize: '0.78rem', color: 'var(--color-text-muted)', textDecoration: 'none', opacity: 0.7 }} title="لوحة تحكم المتجر">
+                🔒 لوحة الإدارة
+              </Link>
+            </div>
 
             <div className="developer-credit">
               <span>تطوير وتصميم: </span>

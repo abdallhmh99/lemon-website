@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Leaf, ArrowLeft } from 'lucide-react';
-import { PRODUCTS_DATA } from '../../data/productsData';
+import { useProducts } from '../../context/ProductsContext';
 import { ProductCard } from '../products/ProductCard';
 import { QuickViewModal } from '../products/QuickViewModal';
 
 export const FeaturedProducts = () => {
   const [selectedProduct, setSelectedProduct] = useState(null);
-  const featured = PRODUCTS_DATA.filter(p => p.isFeatured).slice(0, 5);
+  const { products } = useProducts();
+  const featured = products.filter(p => p.isFeatured).slice(0, 5);
 
   return (
     <section id="featured-products" className="featured-products-section">

@@ -1,22 +1,40 @@
 import React from 'react';
-import { ShoppingCart } from 'lucide-react';
+import { ShoppingCart, AlertCircle } from 'lucide-react';
 import { useCart } from '../../context/CartContext';
 import { useSound } from '../../context/SoundContext';
 
 export const ProductCard = ({ product, onQuickView }) => {
   const { addToCart } = useCart();
   const { playCrunchSound } = useSound();
+  const isAvailable = product.inStock !== false;
 
   const handleAdd = (e) => {
     e.stopPropagation();
+    if (!isAvailable) return;
     addToCart(product);
     playCrunchSound();
   };
 
   return (
-    <div className="p-card-modern">
-      <div className="p-card-image-box" onClick={() => onQuickView(product)}>
+    <div className={`p-card-modern ${!isAvailable ? 'out-of-stock-card' : ''}`}>
+      <div className="p-card-image-box" onClick={() => onQuickView(product)} style={{ position: 'relative' }}>
         <img src={product.image} alt={product.nameAr} className="p-card-img" loading="lazy" />
+        {!isAvailable && (
+          <span style={{
+            position: 'absolute',
+            top: '10px',
+            right: '10px',
+            background: 'rgba(185, 28, 28, 0.92)',
+            color: '#FFF',
+            padding: '3px 8px',
+            borderRadius: '12px',
+            fontSize: '0.75rem',
+            fontWeight: 800,
+            zIndex: 2
+          }}>
+            نفدت الكمية
+          </span>
+        )}
       </div>
 
       <div className="p-card-details">
@@ -32,9 +50,23 @@ export const ProductCard = ({ product, onQuickView }) => {
           <span style={{ fontSize: '0.85rem', fontWeight: 700, marginRight: '4px' }}>ل.س</span>
         </div>
 
-        <button className="p-card-btn-add" onClick={handleAdd}>
-          <ShoppingCart size={15} />
-          <span>أضف للسلة</span>
+        <button 
+          className="p-card-btn-add" 
+          onClick={handleAdd}
+          disabled={!isAvailable}
+          style={!isAvailable ? { background: '#f3f4f6', color: '#9ca3af', cursor: 'not-allowed', border: '1px solid #e5e7eb' } : {}}
+        >
+          {isAvailable ? (
+            <>
+              <ShoppingCart size={15} />
+              <span>أضف للسلة</span>
+            </>
+          ) : (
+            <>
+              <AlertCircle size={15} />
+              <span>غير متوفر حالياً</span>
+            </>
+          )}
         </button>
       </div>
     </div>

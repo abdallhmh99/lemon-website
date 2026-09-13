@@ -1,11 +1,12 @@
 import React, { useState, useMemo, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { Search, X, Sparkles, Truck } from 'lucide-react';
-import { PRODUCTS_DATA, CATEGORIES_DATA } from '../data/productsData';
+import { useProducts } from '../context/ProductsContext';
 import { ProductCard } from '../components/products/ProductCard';
 import { QuickViewModal } from '../components/products/QuickViewModal';
 
 export const ProductsPage = () => {
+  const { products, categories } = useProducts();
   const [searchParams, setSearchParams] = useSearchParams();
   const initialSearch = searchParams.get('search') || '';
   
@@ -36,7 +37,7 @@ export const ProductsPage = () => {
   };
 
   const filtered = useMemo(() => {
-    return PRODUCTS_DATA.filter((p) => {
+    return products.filter((p) => {
       const matchesCategory = activeCategory === 'all' || p.category === activeCategory;
       const term = searchTerm.trim().toLowerCase();
       const matchesSearch =
@@ -47,7 +48,7 @@ export const ProductsPage = () => {
 
       return matchesCategory && matchesSearch;
     });
-  }, [activeCategory, searchTerm]);
+  }, [products, activeCategory, searchTerm]);
 
   return (
     <div className="container" style={{ padding: '40px 24px 80px 24px' }}>
@@ -115,10 +116,10 @@ export const ProductsPage = () => {
 
       {/* Category Tabs (فواكه، خضار، كاندي، ايس كريم، أصناف غريبة، عروض) */}
       <div style={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap', gap: '8px', marginBottom: '32px' }}>
-        {CATEGORIES_DATA.map((cat) => {
+        {categories.map((cat) => {
           const count = cat.id === 'all' 
-            ? PRODUCTS_DATA.length 
-            : PRODUCTS_DATA.filter(p => p.category === cat.id).length;
+            ? products.length 
+            : products.filter(p => p.category === cat.id).length;
           
           return (
             <button

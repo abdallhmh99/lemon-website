@@ -17,7 +17,7 @@ import {
   CheckCircle2,
   Rocket
 } from 'lucide-react';
-import bowlImg from '../assets/images/bowl-fruits.png';
+import bowlImg from '../assets/images/bowl-fruits.webp';
 
 export const AboutPage = () => {
   return (
@@ -69,8 +69,15 @@ export const AboutPage = () => {
         <div style={{ textAlign: 'center' }}>
           <img
             src={bowlImg}
-            alt="فواكه ليمون المجففة بالتبريد"
-            style={{ maxWidth: '100%', maxHeight: '320px', objectFit: 'contain', filter: 'drop-shadow(0 15px 25px rgba(0,0,0,0.08))' }}
+            alt="فواكه ليمون المجففة"
+            style={{ 
+              maxWidth: '100%', 
+              maxHeight: '340px', 
+              width: '100%',
+              borderRadius: '18px', 
+              objectFit: 'cover', 
+              boxShadow: '0 12px 30px rgba(0,0,0,0.08)' 
+            }}
           />
         </div>
       </div>
